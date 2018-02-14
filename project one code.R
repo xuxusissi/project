@@ -66,7 +66,8 @@ Monthly <- read.csv('/Users/mariaren/Desktop/MA 615 first project/PB monthly sum
 # Time series chart for the monthly summary in BP Apprehensions across the different sectors
 ts8 <- as.vector(t(Monthly[,-1]))
 ts9 <- ts(ts8, start= c(2000,10), frequency=12)
-ts.plot(ts9, gpars=list(xlab="year", ylab="Apprehensions", lty=c(1:3)),col='purple')
+ts10 <- ts.plot(ts9, gpars=list(xlab="year", ylab="Apprehensions", lty=c(1:3)),col='purple')
+#From the time series plot, we can see that the average monthly BP Apprehensions increases across the years between 2000 and 2017. 
 
 # 2010 BP Apprehensions
 # Time series chart for the changes in BP Apprehensions in 2010 across the different sectors
