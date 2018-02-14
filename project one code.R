@@ -84,5 +84,28 @@ ts6 <- ts(ts5, start = 1, frequency=12)
 ts.plot(ts6, gpars=list(xlab="sector", ylab="Apprehensions", lty=c(1:3)),col='red')
 
 
+#Additional barplots of both 2010 and 2017 apprehensions 
+
+#Barplot of 2010 BP Apprehensions
+
+A2010 <- read.csv('/Users/mariaren/Desktop/MA 615 first project/PB Apprehensions 2010.csv',header=TRUE,row.names=1, stringsAsFactors = FALSE)
+A2017 <- read.csv('/Users/mariaren/Desktop/MA 615 first project/PB Apprehensions 2017.csv',header=TRUE,row.names=1, stringsAsFactors = FALSE)
+
+barplot(A2010[1:9,13], names.arg = rownames(A2010)[1:9], 
+        las=2,
+        axisnames=TRUE,
+        main="2010 Border Patrol Apprehensions by Sector",
+        border="blue",
+        col="yellow")
+
+#Barplot of 2017 BP Apprehensions
+barplot(A2017[1:9,13], names.arg = rownames(A2017)[1:9], 
+        las=2,
+        axisnames=TRUE,
+        main="2017 Border Patrol Apprehensions by Sector",
+        border="black",
+        col="green")
+
+
 
 
