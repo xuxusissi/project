@@ -1,8 +1,7 @@
 A2010<- read.csv('/Users/yuehanxiao/Desktop/MA415/project/BP Apprehensions 2010.csv', header=TRUE, stringsAsFactors = FALSE)
 A2017<- read.csv('/Users/yuehanxiao/Desktop/MA415/project/PB Apprehensions 2017(2).csv', header=TRUE, stringsAsFactors = FALSE)
 
-A2010 <- read.csv('/Users/mariaren/Desktop/MA 615 first project/BP Apprehensions 2010.csv')
-A2017 <- read.csv('/Users/mariaren/Desktop/MA 615 first project/PB Apprehensions 2017.csv')
+
 #find the sum of each sector without the first column in 2010
 sector_sum_2010<-rowSums(A2010[,-1])
 #find the sector with the most apprehensions
@@ -57,7 +56,22 @@ t.test(intake.A2010_month, intake.A2017_month)
 
 
 
+#Time Series
 
+A2010 <- read.csv('/Users/mariaren/Desktop/MA 615 first project/PB Apprehensions 2010.csv',header=TRUE, stringsAsFactors = FALSE)
+A2017 <- read.csv('/Users/mariaren/Desktop/MA 615 first project/PB Apprehensions 2017.csv',header=TRUE, stringsAsFactors = FALSE)
 
+# 2010 BP Apprehensions
+# Time series chart for the changes in BP Apprehensions in 2010 across the different sectors
+ts1 <- A2010[2:13]
+ts2 <- as.vector(t(ts1))
+ts3 <- ts(ts2, start = 1, frequency=12)
+ts.plot(ts3, gpars=list(xlab="sector", ylab="Apprehensions", lty=c(1:3)),col='purple')
 
+# 2017 BP Apprehensions
+# Time series chart for the changes in BP Apprehensions in 2017 across the different sectors
+ts4 <- A2017[2:13]
+ts5 <- as.vector(t(ts4))
+ts6 <- ts(ts5, start = 1, frequency=12)
+ts.plot(ts6, gpars=list(xlab="sector", ylab="Apprehensions", lty=c(1:3)),col='red')
 
