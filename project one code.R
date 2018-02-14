@@ -69,21 +69,7 @@ ts9 <- ts(ts8, start= c(2000,10), frequency=12)
 ts10 <- ts.plot(ts9, gpars=list(xlab="year", ylab="Apprehensions", lty=c(1:3)),col='purple')
 #From the time series plot, we can see that the average monthly BP Apprehensions increases across the years between 2000 and 2017. 
 
-# 2010 BP Apprehensions
-# Time series chart for the changes in BP Apprehensions in 2010 across the different sectors
-ts1 <- A2010[2:13]
-ts2 <- as.vector(t(ts1))
-ts3 <- ts(ts2, start = 1, frequency=12)
-ts.plot(ts3, gpars=list(xlab="sector", ylab="Apprehensions", lty=c(1:3)),col='blue')
-
-# 2017 BP Apprehensions
-# Time series chart for the changes in BP Apprehensions in 2017 across the different sectors
-ts4 <- A2017[2:13]
-ts5 <- as.vector(t(ts4))
-ts6 <- ts(ts5, start = 1, frequency=12)
-ts.plot(ts6, gpars=list(xlab="sector", ylab="Apprehensions", lty=c(1:3)),col='red')
-
-
+#the following is wrong 
 #Additional barplots of both 2010 and 2017 apprehensions 
 
 #Barplot of 2010 BP Apprehensions
